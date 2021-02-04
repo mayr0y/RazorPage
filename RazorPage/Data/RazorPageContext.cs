@@ -12,8 +12,9 @@ namespace RazorPage.Data.Data
         public RazorPageContext (DbContextOptions<RazorPageContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
 
-        public DbSet<RazorPage.Models.Movie> Movie { get; set; }
+        public DbSet<Movie> Movie { get; set; }
     }
 }
