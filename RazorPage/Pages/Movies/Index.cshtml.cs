@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using RazorPage.Data.Data;
+using RazorPage.Models;
+
+namespace RazorPage.Pages.Movies
+{
+    public class IndexModel : PageModel
+    {
+        private readonly RazorPage.Data.Data.RazorPageContext _context;
+
+        public IndexModel(RazorPage.Data.Data.RazorPageContext context)
+        {
+            _context = context;
+        }
+
+        public IList<Movie> Movie { get;set; }
+
+        public async Task OnGetAsync()
+        {
+            Movie = await _context.Movie.ToListAsync();
+        }
+    }
+}
