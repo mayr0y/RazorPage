@@ -12,9 +12,9 @@ namespace RazorPage.Pages.Movies
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPage.Data.Data.RazorPageContext _context;
-
-        public IndexModel(RazorPage.Data.Data.RazorPageContext context)
+        private readonly RazorPageContext _context;
+ 
+        public IndexModel(RazorPageContext context)
         {
             _context = context;
         }
