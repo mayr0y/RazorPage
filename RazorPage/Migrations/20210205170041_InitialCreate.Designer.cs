@@ -9,7 +9,7 @@ using RazorPage.Data.Data;
 namespace RazorPage.Migrations
 {
     [DbContext(typeof(RazorPageContext))]
-    [Migration("20210204121416_InitialCreate")]
+    [Migration("20210205170041_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace RazorPage.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Rating")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReleaseDate")
